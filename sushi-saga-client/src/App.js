@@ -20,10 +20,10 @@ class App extends Component {
   }
 
   getNextFour = () => {
-    this.setState(prevState => {
-      return {
-        displayIndex: prevState.displayIndex + 4
-      }
+    let newIndex = this.state.displayIndex + 4
+    if(newIndex >= this.state.sushis.length){ newIndex -= this.state.sushis.length}
+    this.setState({
+        displayIndex: newIndex
     })
   }
 
